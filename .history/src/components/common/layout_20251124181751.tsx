@@ -1,0 +1,19 @@
+// Layout.tsx
+import React from "react";
+import Navbar from "./Navbar";
+import { Outlet } from "react-router-dom";
+import Darkmode from "./Darkmode";
+
+function Layout() {
+  return (
+    <>
+<Darkmode/>
+      <Navbar />          {/* Always visible */}
+      <main className="min-h-screen p-4">
+        <Outlet />        {/* 👈 Page content changes here */}
+      </main>
+    </>
+  );
+}
+
+export default Layout;
