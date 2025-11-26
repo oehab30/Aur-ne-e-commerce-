@@ -9,11 +9,11 @@ function Layout() {
   return (
     <>
       <Navbar  />
-      <main className="min-h-screen p-4 pt-18">
+      <main className="min-h-screen p-4 ">
 <Darkmode/>
         <Outlet />        {/* 👈 Page content changes here */}
-      <Footer/>
       </main>
+      <Footer/>
     </>
   );
 }

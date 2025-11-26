@@ -4,13 +4,14 @@ import { motion } from "framer-motion";
 
 function Summercollection() {
   return (
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}   // start hidden & moved down
-        whileInView={{ opacity: 1, x: 0 }} // animate when in view
-        viewport={{ once: true, amount: 0.1 }} // trigger when 20% visible
-        transition={{ duration: 2.5, ease: "easeOut" }}
-      className="relative flex flex-col items-center justify-center text-center mt-20 h-[300px]  bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroImage})` }}>
+    <motion.div
+      initial={{ opacity: 0, x: 100 }}   // start hidden & moved right
+      whileInView={{ opacity: 1, x: 0 }} // animate when in view
+      viewport={{ once: true, amount: 0.2 }} // trigger when 20% visible
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="relative flex flex-col items-center justify-center text-center mt-20 h-[300px] md:h-[500px] bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroImage})` }}
+    >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/35"></div>
 

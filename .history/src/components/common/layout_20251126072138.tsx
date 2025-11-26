@@ -3,7 +3,6 @@ import React from "react";
 import Navbar from "./navbar";
 import { Outlet } from "react-router-dom";
 import Darkmode from "./Darkmode";
-import Footer from "./Footer";
 
 function Layout() {
   return (
@@ -12,8 +11,8 @@ function Layout() {
       <main className="min-h-screen p-4 pt-18">
 <Darkmode/>
         <Outlet />        {/* 👈 Page content changes here */}
-      <Footer/>
       </main>
+      
     </>
   );
 }

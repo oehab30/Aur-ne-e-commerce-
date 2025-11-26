@@ -12,8 +12,8 @@ function Layout() {
       <main className="min-h-screen p-4 pt-18">
 <Darkmode/>
         <Outlet />        {/* 👈 Page content changes here */}
-      <Footer/>
       </main>
+      <Footer
     </>
   );
 }
