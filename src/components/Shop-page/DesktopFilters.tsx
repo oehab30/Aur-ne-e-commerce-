@@ -1,28 +1,34 @@
+'use client'
+
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
-import Priceslide from './priceslide'
-import Color from './color'
+import Priceslide from './Priceslide'
+import Color from './Color'
 import { subCategories, filters } from './data'
+import { motion } from 'framer-motion'
 
 export default function DesktopFilters() {
   return (
-    <form className="hidden lg:block">
+    <motion.form
+      className="hidden lg:block"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       {/* Categories */}
       <h3 className="sr-only">Categories</h3>
       <ul className="space-y-4 border-b border-gray-200 dark:border-gray-700 pb-6 text-sm font-medium text-gray-900 dark:text-gray-200">
         {subCategories.map((category) => (
           <li key={category.name}>
-            <a
-              href={category.href}
-              className="hover:text-indigo-600 dark:hover:text-indigo-400"
-            >
+            <a href={category.href} className="hover:text-indigo-600 dark:hover:text-indigo-400">
               {category.name}
             </a>
           </li>
         ))}
       </ul>
 
-      {/* Price Filter */}
+      {/* Price */}
       <Disclosure as="div" className="border-b border-gray-200 dark:border-gray-700 py-6">
         {({ open }) => (
           <>
@@ -42,7 +48,7 @@ export default function DesktopFilters() {
         )}
       </Disclosure>
 
-      {/* Color Filter */}
+      {/* Color */}
       <Disclosure as="div" className="border-b border-gray-200 dark:border-gray-700 py-6">
         {({ open }) => (
           <>
@@ -62,13 +68,9 @@ export default function DesktopFilters() {
         )}
       </Disclosure>
 
-      {/* Other Filters */}
+      {/* material filters */}
       {filters.map((section) => (
-        <Disclosure
-          key={section.id}
-          as="div"
-          className="border-b border-gray-200 dark:border-gray-700 py-6"
-        >
+        <Disclosure key={section.id} as="div" className="border-b border-gray-200 dark:border-gray-700 py-6">
           <h3 className="-my-3 flow-root">
             <DisclosureButton className="group flex w-full items-center justify-between bg-white dark:bg-gray-800 py-3 text-sm text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-200">
               <span className="font-medium text-gray-900 dark:text-gray-200">{section.name}</span>
@@ -78,6 +80,8 @@ export default function DesktopFilters() {
               </span>
             </DisclosureButton>
           </h3>
+
+                {/* material filters */}
           <DisclosurePanel className="pt-6">
             <div className="space-y-4">
               {section.options.map((option, optionIdx) => (
@@ -102,6 +106,6 @@ export default function DesktopFilters() {
           </DisclosurePanel>
         </Disclosure>
       ))}
-    </form>
+    </motion.form>
   )
 }

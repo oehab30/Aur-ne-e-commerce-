@@ -1,10 +1,11 @@
 import React from 'react'
-function cart() {
+import CartBox from '../components/cart-page/Cartbox'
+function Cart() {
   return (
 <>
-<h2>  cart Page</h2>;
-      </>
+<CartBox/>
+   </>
        )
 }
 
-export default cart
+export default Cart

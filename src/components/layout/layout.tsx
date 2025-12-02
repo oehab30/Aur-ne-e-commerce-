@@ -1,9 +1,9 @@
 // Layout.tsx
 import React from "react";
-import Navbar from "./navbar";
+import Navbar from "../common/navbar";
 import { Outlet } from "react-router-dom";
 import Darkmode from "./Darkmode";
-import Footer from "./Footer";
+import Footer from "../common/Footer";
 
 function Layout() {
   return (

@@ -1,7 +1,7 @@
 // Routes.tsx
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router";
-import Layout from "../components/common/layout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "../components/layout/layout";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
 import Cart from "../pages/cart";
@@ -11,7 +11,7 @@ import Contact from "../pages/Contact";
 import Error from "../pages/Error";
 import Wishlist from "../pages/Wishlist";
 import Login from "../components/login-page/Loginform"
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [

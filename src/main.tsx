@@ -2,10 +2,16 @@
 import "./assets/styles/Modules.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Routes from "./Routes/Routes"; // this is your router setup
+import App from "./App";
+import QueryProvider from "./hooks/Queryprovider";
+
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
+
   <React.StrictMode>
-    <Routes />
+    <QueryProvider>
+      <App />
+    </QueryProvider>
   </React.StrictMode>
 )
