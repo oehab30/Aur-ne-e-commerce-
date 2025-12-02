@@ -1,19 +1,33 @@
 'use client'
 
 // Shared data and helpers for Categories components
+export const availabilityFilters = [
+  {
+    id: "availability",
+    name: "Availability",
+    options: [
+      { value: "instock", label: "In Stock", checked: false },
+      { value: "outofstock", label: "Out of Stock", checked: true },
+    ],
+  },
+];
+
+
+
 export const sortOptions = [
-  { name: 'Most Popular', href: '#', current: true },
-  { name: 'Best Rating', href: '#', current: false },
-  { name: 'Newest', href: '#', current: false },
-  { name: 'Price: Low to High', href: '#', current: false },
-  { name: 'Price: High to Low', href: '#', current: false },
-]
+  { name: "Best seller", value: "Best seller" },
+  { name: "Price: Low to High", value: "low-high" },
+  { name: "Price: High to Low", value: "high-low" },
+  { name: "Newest", value: "newest" },
+  { name: "Oldest", value: "oldest" },
+];
+
 
 export const subCategories = [
-  { name: 'Totes', href: '#' },
-  { name: 'Backpacks', href: '#' },
-  { name: 'Travel Bags', href: '#' },
-  { name: 'Hip Bags', href: '#' },
+  { name: 'Watches', href: '#' },
+  { name: 'Bags', href: '#' },
+  { name: 'Rings ', href: '#' },
+  { name: 'Bracelet', href: '#' },
   { name: 'Laptop Sleeves', href: '#' },
 ]
 
@@ -30,7 +44,7 @@ export const filters = [
 ]
 
 
- export const product = {
+ export const productColor = {
     colors: [
       { id: 'white', name: 'White', classes: 'bg-white checked:outline-gray-400' },
       { id: 'gray', name: 'Gray', classes: 'bg-gray-200 checked:outline-gray-400' },

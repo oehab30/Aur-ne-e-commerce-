@@ -28,6 +28,11 @@ export default function DesktopFilters() {
         ))}
       </ul>
 
+
+
+ 
+
+
       {/* Price */}
       <Disclosure as="div" className="border-b border-gray-200 dark:border-gray-700 py-6">
         {({ open }) => (

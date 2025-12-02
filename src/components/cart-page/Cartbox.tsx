@@ -62,7 +62,8 @@ function Cartbox() {
     <section className="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
         {/* Page Title */}
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">Your Shopping Bag</h2>
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white sm:text-4xl mb-2">Your Shopping Bag</h2>
+        <h2 className="text-sm font-semibold text-gray-500 dark:text-white sm:text-xl">5 items in your cart</h2>
 
         {/* Main Layout Container - Flex layout with cart items on left, summary on right */}
         <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">

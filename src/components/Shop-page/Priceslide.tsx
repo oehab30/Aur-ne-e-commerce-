@@ -3,7 +3,7 @@ import { Slider } from "@/components/ui/slider"
 function Priceslide() {
   return (
 
-<Slider defaultValue={[33]} max={100} step={1} />
+<Slider defaultValue={[30]} max={100} step={1} />
 
   )
 }
