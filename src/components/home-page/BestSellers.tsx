@@ -11,10 +11,12 @@ function BestSellers() {
 
   return (
     <>
-      {/* Title */}
+      {/* Title
+
       <h1 className="text-center font-bold text-4xl mb-12 mt-20 font-Playfair dark:text-white">
         Best <br /> Sellers
       </h1>
+        */}
 
       {/* Product List */}
       <div className="flex gap-6 px-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide lg:flex-wrap lg:justify-center">

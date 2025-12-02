@@ -6,6 +6,7 @@ import { FunnelIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 import MobileFilters from './MobileFilters'
 import DesktopFilters from './DesktopFilters'
 import SortMenu from './SortMenu'
+import BestSellers from '../home-page/BestSellers'
 
 export default function Categories() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
@@ -45,7 +46,8 @@ export default function Categories() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
             <DesktopFilters />
 
-            <div className="lg:col-span-3">{/* Render your products here */}</div>
+            <div className="lg:col-span-3">{/* Render your products here */}<BestSellers /></div>
+
           </div>
         </section>
       </main>

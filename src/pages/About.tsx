@@ -10,19 +10,19 @@ const product = {
   ],
   images: [
     {
-      src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+      src: '/public/home-pic/BS-1.png',
       alt: 'Two each of gray, white, and black shirts laying flat.',
     },
     {
-      src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
+      src: '/public/home-pic/BS-2.png',
       alt: 'Model wearing plain black basic tee.',
     },
     {
-      src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+      src: '/public/home-pic/BS-3.png',
       alt: 'Model wearing plain gray basic tee.',
     },
     {
-      src: 'https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+      src: '/public/home-pic/BS-4.png',
       alt: 'Model wearing plain white basic tee.',
     },
   ],
@@ -32,14 +32,11 @@ const product = {
     { id: 'black', name: 'Black', classes: 'bg-gray-900 checked:outline-gray-900' },
   ],
   sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
+    { name: '6', inStock: false },
+    { name: '7', inStock: true },
+    { name: '8', inStock: true },
+    { name: '9', inStock: true },
+
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
