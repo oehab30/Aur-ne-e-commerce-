@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-
+import { product } from './data';
 function Color() {
-  const product = {
-    colors: [
-      { id: 'white', name: 'White', classes: 'bg-white checked:outline-gray-400' },
-      { id: 'gray', name: 'Gray', classes: 'bg-gray-200 checked:outline-gray-400' },
-      { id: 'black', name: 'Black', classes: 'bg-black checked:outline-gray-900' },
-      { id: 'purple', name: 'Purple', classes: 'bg-purple-600 checked:outline-gray-900' },
-      { id: 'blue', name: 'Blue', classes: 'bg-blue-500 checked:outline-gray-900' },
-    ],
-  };
 
   const [selectedColor, setSelectedColor] = useState(product.colors[0].id);
 
   return (
     <fieldset aria-label="Choose a color" className="mt-2 w-[250px]">
       <div className="flex items-center gap-x-3">
-        {product.colors.map((color, index) => (
+        {product.colors.map((color) => (
           <div
             key={color.id}
             className="flex rounded-full outline -outline-offset-1 outline-black/10"
