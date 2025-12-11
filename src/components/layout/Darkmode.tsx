@@ -13,7 +13,7 @@ function Darkmode() {
 
   return (
     <>
-      <Switch  onClick={() => setMode(!mode)} className=" px- fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <Switch  onClick={() => setMode(!mode)} className=" fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
 
       </Switch>
     </>

@@ -3,7 +3,7 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import Priceslide from './Priceslide'
-import Color from './Color'
+import Color from './color'
 import { subCategories, filters } from './data'
 import { motion } from 'framer-motion'
 

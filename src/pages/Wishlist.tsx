@@ -1,5 +1,5 @@
 import React from "react";
-import { api } from "../Lib/utils/api";
+import { api } from "@/lib/utils/api";
 import { useQuery } from "@tanstack/react-query";
 
 interface Product {

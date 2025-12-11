@@ -4,7 +4,7 @@
 import { Dialog, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
-import Priceslide from './priceslide' // price range slider component
+import Priceslide from './Priceslide' // price range slider component
 import Color from './color' // color filter component
 import { subCategories, filters } from './data' // static data for filters
 

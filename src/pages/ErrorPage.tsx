@@ -1,6 +1,6 @@
 import React from "react";
 
-const Error = () => {
+const ErrorPage = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-200 px-4">
       <div className="text-center bg-white shadow-xl rounded-2xl p-10 max-w-md w-full">
@@ -30,4 +30,4 @@ const Error = () => {
   );
 };
 
-export default Error;
+export default ErrorPage;

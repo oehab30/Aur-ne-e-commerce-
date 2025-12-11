@@ -4,11 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../components/layout/layout";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
-import Cart from "../pages/cart";
+import Cart from "../pages/Cart";
 import Profile from "../pages/Profile";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-import Error from "../pages/Error";
+import ErrorPage from "../pages/ErrorPage";
 import Wishlist from "../pages/Wishlist";
 import Login from "../components/login-page/Loginform"
 export const router = createBrowserRouter([
@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
       { path: "/Profile", element: <Profile /> },
     ],
   },
- { path: "*", element: <Error/> },
+ { path: "*", element: <ErrorPage/> },
 ]);
 
 function Routes() {

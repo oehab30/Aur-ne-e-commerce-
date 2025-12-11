@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import {
   Breadcrumb,
@@ -9,7 +9,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb.tsx";
 
-const Tap = ({ PageName }) => {
+const Tap = ({ PageName }: { PageName: string }) => {
   return (
     <Breadcrumb className="p-4">
       <BreadcrumbList>

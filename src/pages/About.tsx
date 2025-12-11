@@ -51,7 +51,7 @@ const product = {
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
-function classNames(...classes) {
+function classNames(...classes: (string | undefined | null | boolean)[]) {
   return classes.filter(Boolean).join(' ')
 }
 
@@ -185,12 +185,12 @@ export default function Example() {
                   <div className="grid grid-cols-4 gap-3">
                     {product.sizes.map((size) => (
                       <label
-                        key={size.id}
+                        key={size.name}
                         aria-label={size.name}
                         className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-indigo-600 has-checked:bg-indigo-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-600 has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25"
                       >
                         <input
-                          defaultValue={size.id}
+                          defaultValue={size.name}
                           defaultChecked={size === product.sizes[2]}
                           name="size"
                           type="radio"

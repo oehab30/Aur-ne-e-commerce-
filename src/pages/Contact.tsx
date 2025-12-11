@@ -21,7 +21,7 @@ export default function Example() {
         <p className="mt-2 text-lg/8 text-gray-400">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
       </div>
 
-       <motion.div
+       <motion.form
         initial={{ opacity: 0, x: -100 }}   // start hidden & moved down
         whileInView={{ opacity: 1, x: 0 }} // animate when in view
         viewport={{ once: true, amount: 0.1 }} // trigger when 20% visible
@@ -161,7 +161,7 @@ export default function Example() {
             Let's talk
           </button>
         </div>
-      </motion.div>
+      </motion.form>
     </div>
   )
 }
