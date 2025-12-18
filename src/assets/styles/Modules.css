@@ -115,12 +115,33 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-500;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* Professional Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 dark:bg-white/10 rounded-full border-4 border-solid border-transparent bg-clip-padding transition-colors;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-300 dark:bg-white/20;
 }
 
 :root {
@@ -136,4 +157,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Luxury Typography Utilities */
+.font-outline-2 {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.4);
+}
 
+.dark .font-outline-white {
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.5);
+}

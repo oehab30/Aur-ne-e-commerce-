@@ -1,168 +1,68 @@
-import { ChevronDownIcon } from '@heroicons/react/16/solid'
+import React from "react";
+import ContactHeader from "../components/contact/ContactHeader";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
 import { motion } from "framer-motion";
 
-export default function Example() {
+export default function Contact() {
   return (
-    <div className="isolate bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-      >
-        <div
-          style={{
-            clipPath:
-              'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-          }}
-          className="relative left-1/2 -z-10 aspect-1155/678 w-144.5 max-w-none -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-20 sm:left-[calc(50%-40rem)] sm:w-288.75"
-        />
-      </div>
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">Contact sales</h2>
-        <p className="mt-2 text-lg/8 text-gray-400">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
-      </div>
+    <div className="bg-white dark:bg-[#0a0a0a] min-h-screen relative overflow-hidden transition-colors duration-500">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-600/5 dark:bg-orange-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gray-200/20 dark:bg-white/5 blur-[150px] rounded-full pointer-events-none" />
 
-       <motion.form
-        initial={{ opacity: 0, x: -100 }}   // start hidden & moved down
-        whileInView={{ opacity: 1, x: 0 }} // animate when in view
-        viewport={{ once: true, amount: 0.1 }} // trigger when 20% visible
-        transition={{ duration: 2.5, ease: "easeOut" }} action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
-
-        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-          <div>
-            <label htmlFor="first-name" className="block text-sm/6 font-semibold text-white">
-              First name
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="first-name"
-                name="first-name"
-                type="text"
-                autoComplete="given-name"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="last-name" className="block text-sm/6 font-semibold text-white">
-              Last name
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="last-name"
-                name="last-name"
-                type="text"
-                autoComplete="family-name"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="company" className="block text-sm/6 font-semibold text-white">
-              Company
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="company"
-                name="company"
-                type="text"
-                autoComplete="organization"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="email" className="block text-sm/6 font-semibold text-white">
-              Email
-            </label>
-            <div className="mt-2.5">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-              />
-            </div>
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="phone-number" className="block text-sm/6 font-semibold text-white">
-              Phone number
-            </label>
-            <div className="mt-2.5">
-              <div className="flex rounded-md bg-white/5 outline-1 -outline-offset-1 outline-white/10 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-500">
-                <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                  <select
-                    id="country"
-                    name="country"
-                    autoComplete="country"
-                    aria-label="Country"
-                    className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent py-2 pr-7 pl-3.5 text-base text-gray-400 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
-                  >
-                    <option>US</option>
-                    <option>CA</option>
-                    <option>EU</option>
-                  </select>
-                  <ChevronDownIcon
-                    aria-hidden="true"
-                    className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-400 sm:size-4"
-                  />
-                </div>
-                <input
-                  id="phone-number"
-                  name="phone-number"
-                  type="text"
-                  placeholder="123-456-7890"
-                  className="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="sm:col-span-2">
-            <label htmlFor="message" className="block text-sm/6 font-semibold text-white">
-              Message
-            </label>
-            <div className="mt-2.5">
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
-                defaultValue={''}
-              />
-            </div>
-          </div>
-          <div className="flex gap-x-4 sm:col-span-2">
-            <div className="flex h-6 items-center">
-              <div className="group relative inline-flex w-8 shrink-0 rounded-full bg-white/5 p-px inset-ring inset-ring-white/10 outline-offset-2 outline-indigo-500 transition-colors duration-200 ease-in-out has-checked:bg-indigo-500 has-focus-visible:outline-2">
-                <span className="size-4 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-3.5" />
-                <input
-                  id="agree-to-policies"
-                  name="agree-to-policies"
-                  type="checkbox"
-                  aria-label="Agree to policies"
-                  className="absolute inset-0 appearance-none focus:outline-hidden"
-                />
-              </div>
-            </div>
-            <label htmlFor="agree-to-policies" className="text-sm/6 text-gray-400">
-              By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold whitespace-nowrap text-orange-400">
-                privacy policy
-              </a>
-              .
-            </label>
-          </div>
-        </div>
-        <div className="mt-10">
-          <button
-            type="submit"
-            className="block w-full rounded-md bg-orange-400  px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-orange-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 sm:py-32">
+        <ContactHeader />
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mt-12">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            Let's talk
-          </button>
-        </div>
-      </motion.form>
-    </div>
-  )
-}
+            <ContactInfo />
+          </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <ContactForm />
+          </motion.div>
+        </div>
+
+        {/* Location Map Section */}
+        <motion.div
+           initial={{ opacity: 0, y: 50 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           className="mt-24 space-y-8"
+        >
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter text-gray-900 dark:text-white uppercase">Our Worldwide <span className="text-orange-500">Boutique</span></h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm tracking-widest uppercase">Visit us at our flagship location</p>
+          </div>
+
+          <div className="h-[450px] w-full rounded-[3rem] overflow-hidden border border-gray-100 dark:border-white/10 shadow-2xl relative">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.317424611463!2d-73.97825708459377!3d40.75889497932679!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f9cfcb250d%3A0xdb570ddcb466874a!2s5th%20Ave%2C%20New%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2seg!4v1710000000000!5m2!1sen!2seg" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true}
+              loading="lazy"
+              className="grayscale dark:invert dark:hue-rotate-180 opacity-80 contrast-125"
+              title="Aurene Flagship Boutique"
+            />
+            {/* Map Overlay to prevent accidental scrolls */}
+            <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/5 dark:ring-white/5 shadow-inner" />
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+}

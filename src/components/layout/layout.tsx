@@ -1,19 +1,20 @@
-// Layout.tsx
 import React from "react";
-import Navbar from "../common/navbar";
+import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
-import Darkmode from "./Darkmode";
-import Footer from "../common/Footer";
+import Footer from "./Footer";
+import ScrollProgress from "./ScrollProgress";
+import FloatingDarkToggle from "./FloatingDarkToggle";
 
 function Layout() {
   return (
     <>
-      <Navbar    />
-      <main className="min-h-screen  pt-18">
-        <Outlet />        {/* 👈 Page content changes here */}
-<Darkmode/>
+      <ScrollProgress />
+      <FloatingDarkToggle />
+      <Navbar />
+      <main className="min-h-screen">
+        <Outlet />
       </main>
-      <Footer  />
+      <Footer />
     </>
   );
 }

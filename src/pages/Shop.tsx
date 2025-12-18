@@ -1,13 +1,10 @@
 import React from 'react'
-import Categories from '../components/Shop-page/Categories'
+import Categories from '../components/shop/Categories'
 
 function Shop() {
   return (
     <>
 <Categories />
-
-
-  
     </>
   )
 }

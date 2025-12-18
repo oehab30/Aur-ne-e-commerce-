@@ -1,5 +1,5 @@
 import React from 'react'
-import CartBox from '../components/cart-page/Cartbox'
+import CartBox from '../components/cart/Cartbox'
 function Cart() {
   return (
 <>
