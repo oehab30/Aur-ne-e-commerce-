@@ -9,6 +9,7 @@ import { useWishlist } from "@/context/WishlistContext";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation();
   const { cartCount } = useCart();
   const { wishlistCount } = useWishlist();
@@ -21,6 +22,8 @@ function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
+    // Check admin status whenever location changes
+    setIsAdmin(localStorage.getItem("isAdmin") === "true");
   }, [location]);
 
   const navLinks = [
@@ -72,7 +75,11 @@ function Navbar() {
             )}
           </Link>
           
-          <Link to="/Login" className="p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors">
+          <Link 
+            to={isAdmin ? "/dashboard" : "/Login"} 
+            className="p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-white/5 rounded-full transition-colors"
+            title={isAdmin ? "Dashboard" : "Login"}
+          >
             <User className="w-5 h-5" />
           </Link>
           

@@ -3,6 +3,7 @@ export interface Product {
   _id: string;
   id: string;
   title: string;
+  name?: string; // Support for db.json
   description: string;
   originalPrice: number;
   discount: number;
@@ -14,6 +15,7 @@ export interface Product {
   stock: number;
   imagePublicId: string;
   imageUrl: string;
+  image?: string; // Support for db.json
   createdAt: string; // ISO date string
   updatedAt: string; // ISO date string
   __v: number;

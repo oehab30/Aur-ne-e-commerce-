@@ -4,12 +4,30 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react
 import { PlusIcon, MinusIcon } from '@heroicons/react/20/solid'
 import Priceslide from './Priceslide'
 import Color from './color'
-import { subCategories, filters } from './data'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useShopStore } from '@/store/useShopStore'
+import { useQuery } from '@tanstack/react-query'
+import { productService } from '@/services/productService'
+import { extractUniqueCategories, extractUniqueMaterials } from '@/utils/filterUtils'
 
 export default function DesktopFilters() {
   const { filters: activeFilters, setCategory, toggleMaterial } = useShopStore();
+  
+  // Fetch products to generate dynamic filters
+  const { data: products = [] } = useQuery({
+    queryKey: ['products'],
+    queryFn: productService.getProducts,
+  });
+  
+  // Generate dynamic filter options
+  const dynamicCategories = extractUniqueCategories(products);
+  const dynamicMaterials = extractUniqueMaterials(products);
+  
+  const materialFilters = [{
+    id: 'Material',
+    name: 'Material',
+    options: dynamicMaterials
+  }];
 
   return (
     <motion.form
@@ -43,7 +61,7 @@ export default function DesktopFilters() {
               All Collections
             </button>
           </li>
-          {subCategories.map((category) => (
+          {dynamicCategories.map((category) => (
             <li key={category.name}>
               <button
                 type="button"
@@ -126,7 +144,7 @@ export default function DesktopFilters() {
       </Disclosure>
 
       {/* material filters */}
-      {filters.map((section) => (
+      {materialFilters.map((section) => (
         <Disclosure key={section.id} as="div" defaultOpen className="border-b border-gray-100 dark:border-white/10 py-8">
           {({ open }) => (
             <>

@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
+import AdminRoute from "../components/auth/AdminRoute";
 import { Loader2 } from "lucide-react";
 
 // Lazy Load Pages for Performance
@@ -15,6 +16,8 @@ const ErrorPage = lazy(() => import("../pages/ErrorPage"));
 const Wishlist = lazy(() => import("../pages/Wishlist"));
 const AuthPage = lazy(() => import("../pages/AuthPage"));
 const Dashboard = lazy(() => import("../pages/account/Dashboard"));
+const AddProduct = lazy(() => import("../pages/admin/AddProduct"));
+const EditProduct = lazy(() => import("../pages/admin/EditProduct"));
 
 // Global Loading Component
 const PageLoader = () => (
@@ -92,9 +95,23 @@ export const router = createBrowserRouter([
         ) 
       },
       
-      // Protected Routes
+// Protected Routes
       {
         element: <ProtectedRoute />,
+        children: [
+          { 
+            path: "/Profile", 
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <Profile />
+              </Suspense>
+            ) 
+          },
+        ],
+      },
+      // Admin Routes
+      {
+        element: <AdminRoute />,
         children: [
           { 
             path: "/dashboard", 
@@ -105,10 +122,18 @@ export const router = createBrowserRouter([
             ) 
           },
           { 
-            path: "/Profile", 
+            path: "/dashboard/products/add", 
             element: (
               <Suspense fallback={<PageLoader />}>
-                <Profile />
+                <AddProduct />
+              </Suspense>
+            ) 
+          },
+          { 
+            path: "/dashboard/products/edit/:id", 
+            element: (
+              <Suspense fallback={<PageLoader />}>
+                <EditProduct />
               </Suspense>
             ) 
           },

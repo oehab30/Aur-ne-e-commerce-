@@ -27,12 +27,21 @@ export default function LoginForm({ onSwitch }: LoginFormProps) {
   const { mutate, isPending } = useMutation({
     mutationFn: async (data: LoginFormInputs) => {
       const response = await api.post("/auth/sign-in", data);
-      return response.data;
+      return { response: response.data, loginData: data };
     },
-    onSuccess: (data) => {
-      if (data?.token) {
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard");
+    onSuccess: ({ response, loginData }) => {
+      console.log("Login successful:", response);
+      if (response?.token) {
+        localStorage.setItem("token", response.token);
+        
+        // Check for specific admin credentials
+        if (loginData.email === "t@t.tt" && loginData.password === "Secret@1") {
+            localStorage.setItem("isAdmin", "true");
+            navigate("/dashboard");
+        } else {
+            localStorage.removeItem("isAdmin");
+            navigate("/"); // Redirect regular users to home
+        }
       }
     },
   });

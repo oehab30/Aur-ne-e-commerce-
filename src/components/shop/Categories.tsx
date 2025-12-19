@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import MobileFilters from './MobileFilters'
 import DesktopFilters from './DesktopFilters'
 import SortMenu from './SortMenu'
-import BestSellers from '../home/BestSellers'
+import ShopProductGrid from './ShopProductGrid'
 
 export default function Categories() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
@@ -77,7 +77,7 @@ export default function Categories() {
             >
               <AnimatePresence>
                 <div className="space-y-12">
-                   <BestSellers />
+                   <ShopProductGrid />
                 </div>
               </AnimatePresence>
             </motion.div>

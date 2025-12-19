@@ -1,15 +1,25 @@
 import React from 'react';
 import classNames from 'classnames';
-import { productColor } from './data';
 import { useShopStore } from '@/store/useShopStore';
+import { useQuery } from '@tanstack/react-query';
+import { productService } from '@/services/productService';
+import { extractUniqueColors } from '@/utils/filterUtils';
 
 function Color() {
   const { filters, setColor } = useShopStore();
+  
+  // Fetch products to generate dynamic colors
+  const { data: products = [] } = useQuery({
+    queryKey: ['products'],
+    queryFn: productService.getProducts,
+  });
+  
+  const dynamicColors = extractUniqueColors(products);
 
   return (
     <fieldset aria-label="Choose a color" className="mt-2 w-full">
       <div className="flex flex-wrap items-center gap-3">
-        {productColor.colors.map((color) => (
+        {dynamicColors.map((color) => (
           <div
             key={color.id}
             className={classNames(

@@ -71,6 +71,72 @@
       "image": "/home-pic/BS-3.png", 
       "stock": 30,
       "description": "Delicate silver chain with crystal accents."
+    },
+    { 
+      "id": "7", 
+      "name": "Elegant Gold Watch", 
+      "category": "Watches", 
+      "price": 2450, 
+      "material": "Gold", 
+      "color": "white", 
+      "image": "/home-pic/BS-1.png", 
+      "stock": 12,
+      "description": "Exquisite gold watch with a minimalist face."
+    },
+    { 
+      "id": "8", 
+      "name": "Marine Blue Diver", 
+      "category": "Watches", 
+      "price": 3450, 
+      "material": "Stainless Steel", 
+      "color": "blue", 
+      "image": "/home-pic/BS-2.png", 
+      "stock": 5,
+      "description": "High-performance timepiece for the modern explorer."
+    },
+    { 
+      "id": "9", 
+      "name": "Platinum Ring", 
+      "category": "Rings", 
+      "price": 2100, 
+      "material": "Silver", 
+      "color": "gray", 
+      "image": "/home-pic/BS-3.png", 
+      "stock": 20,
+      "description": "Sterling silver ring with a hand-polished finish."
+    },
+    { 
+      "id": "10", 
+      "name": "Stealth Watch", 
+      "category": "Watches", 
+      "price": 2000, 
+      "material": "Stainless Steel", 
+      "color": "black", 
+      "image": "/home-pic/BS-4.png", 
+      "stock": 8,
+      "description": "Sleek all-black design for unparalleled elegance."
+    },
+    { 
+      "id": "11", 
+      "name": "Designer Bag", 
+      "category": "Bags", 
+      "price": 1250, 
+      "material": "Leather", 
+      "color": "purple", 
+      "image": "/home-pic/BS-1.png", 
+      "stock": 15,
+      "description": "Fine Italian leather handbag for your daily essentials."
+    },
+    { 
+      "id": "12", 
+      "name": "Diamond Bracelet", 
+      "category": "Bracelet", 
+      "price": 950, 
+      "material": "Silver", 
+      "color": "white", 
+      "image": "/home-pic/BS-3.png", 
+      "stock": 30,
+      "description": "Delicate silver chain with crystal accents."
     }
   ],
 
